@@ -27,14 +27,14 @@ function DesplayPartOfSpeech({meanings}){
 				<h5>Definition:</h5>
 				<p>{meanings.definitions[item].definition}</p>
 			</div>
-			
+
 			{meanings.definitions[item].example && (
 				<div>
 					<h5>Example:</h5>
 					<p>{meanings.definitions[item].example}</p>
 				</div>
 			)}
-			{item < (meanings.definitions.length -1) ? (<button onClick={()=>setItem(item+1)} className="next-btn">
+			{(item < (meanings.definitions.length -1) && meanings.definitions.length >= 2) ? (<button onClick={()=>setItem(item+1)} className="next-btn">
 				<img src="./assets/icons8-next-page-100.png" alt="Logo" />
 				<span>Next Definition</span>
 			</button>) : setItem(0)}
@@ -51,13 +51,13 @@ const App = () => {
 
 	const checkSpeech = (event) =>{
 		if(data.meanings.length > 1){
-			event.target.value === 'noun' ? setPartOfSpeech(data.meanings[0]) : setPartOfSpeech(data.meanings[1]);
+			event.target.value === 'noun' ? setPartOfSpeech("noun") : setPartOfSpeech('verb');
 		}
 	}
 
 	return (
 		<div className="App">
-			<h1>Free Dictionary</h1>
+			<h1>Dictionary</h1>
 			<div className='word-search'>
 				<InsertWord word={word} setWord={setWord} />
 				<button onClick={()=> SearchWord(word, setData)} className="search">
@@ -76,7 +76,8 @@ const App = () => {
 								<option>verb</option>
 							</select>
 						</div>
-						<DesplayPartOfSpeech meanings={partOfSpeech === null ? data.meanings[0] : partOfSpeech} />
+						{ partOfSpeech === 'noun' ? <DesplayPartOfSpeech meanings={data.meanings[0]} />
+							: <DesplayPartOfSpeech meanings={data.meanings[1]} /> }
 					</div>
 				</div>
 				)}
