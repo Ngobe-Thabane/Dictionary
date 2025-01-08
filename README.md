@@ -1,25 +1,29 @@
 # Dictionary
-## Discription
-This is a dictionary App which allows users to search for a any valid word regonised by the dictionary API
-then get all the definitions and example of that word. 
 
-## Overview
+## Description
+This is a Dictionary App that allows users to search for any valid word recognized by the dictionary API. Once a word is searched, the app retrieves and displays all available definitions and example sentences for that word.
 
+## Features
+- **Search for words**: Users can search for any valid word and get definitions.
+- **Example sentences**: The app displays example sentences for the word to help users understand its context.
+- **User-friendly interface**: Clean and simple design for easy word lookup.
 
-### Screenshot
+## Screenshot
 #### Desktop
-![](./assets/Dictionary.png)
+![Screenshot](./assets/Dictionary.png)
 
+## Live Demo
+- You can try out the live version of the app here: [Dictionary App Live Demo](https://ngobe-thabane.github.io/Dictionary/)
 
-### Links
-- Live URL: [Dictionary App](https://ngobe-thabane.github.io/Dictionary/)
+## Built With
+- **HTML5**: Semantic HTML markup
+- **CSS**: Custom properties for styling
+- **React**: JavaScript library for building the user interface
+- **JavaScript**: Used for app functionality and interacting with the dictionary API
 
+## Installation
+If you'd like to run this project locally, you can clone it to your machine and install the necessary dependencies.
 
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- React
-- JavaScript
-
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ngobe-thabane/Dictionary.git
